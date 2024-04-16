@@ -51,9 +51,9 @@ function countUp() {
 }
 
 function shareAtTweet(s, ms) {
-  let url = "https://kagomen.github.io/10sec-game/";
+  let url = "https://kagomen.github.io/10SecondGame/";
   let formattedTimeForTweet = `${s}.${String(ms).padStart(3, "0").slice(0, 2)}`;
-  let text = `I played the 10-second challenge and scored ${formattedTimeForTweet} seconds ⏱️ #10SecondGame\n`;
+  let text = `❤️⏱️ Played the 10-second game and scored ${formattedTimeForTweet} seconds 🐇♣️ #10SecondGame\n`;
 
   url = encodeURIComponent(url);
   text = encodeURIComponent(text);
