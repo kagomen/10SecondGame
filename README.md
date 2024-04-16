@@ -1,4 +1,4 @@
-# ⏱️ 10 seconds challenge game
+# ❤️⏱️ 10-second game 🐇♣️
 
 参考:
 
