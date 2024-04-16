@@ -61,7 +61,9 @@ start.addEventListener("click", () => {
 stop.addEventListener("click", () => {
   clearTimeout(timerId);
 
-  if (elapsedMs == 10000) {
+  if (9050 <= elapsedMs && elapsedMs < 10050) {
+    message = "Incredible 👀";
+  } else if (9100 <= elapsedMs && elapsedMs < 10100) {
     message = "Excellent 🎉";
   } else if (9250 <= elapsedMs && elapsedMs < 10250) {
     message = "Great 🌟";
