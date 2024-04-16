@@ -56,6 +56,8 @@ start.addEventListener("click", () => {
 
   hideButton(start);
   showButton(stop);
+
+  timer.classList.add("fade-out");
 });
 
 stop.addEventListener("click", () => {
@@ -78,6 +80,7 @@ stop.addEventListener("click", () => {
   hideButton(stop);
   showButton(reset);
   showText(result);
+  timer.classList.remove("fade-out");
 });
 
 reset.addEventListener("click", () => {

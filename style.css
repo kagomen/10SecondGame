@@ -20,3 +20,17 @@
 .visibility {
   visibility: visible;
 }
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.fade-out {
+  animation: 3s 2s forwards fade-out;
+}
