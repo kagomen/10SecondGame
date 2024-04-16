@@ -24,6 +24,16 @@ function showButton(btn) {
   btn.classList.add("display");
 }
 
+function hideText(result) {
+  result.classList.remove("visibility");
+  result.classList.add("visibility-hidden");
+}
+
+function showText(result) {
+  result.classList.remove("visibility-hidden");
+  result.classList.add("visibility");
+}
+
 function countUp() {
   elapsedMs = Date.now() - startTime;  // 経過時間を取得
   elapsedTime = new Date(elapsedMs); // Dateオブジェクトに変換
@@ -65,14 +75,14 @@ stop.addEventListener("click", () => {
   result.textContent = message;
   hideButton(stop);
   showButton(reset);
+  showText(result);
 });
 
 reset.addEventListener("click", () => {
   startTime = 0;
   elapsedTime = 0;
   timer.textContent = "00:00";
-  result.textContent = "";
-
+  hideText(result);
   hideButton(reset);
   showButton(start);
 });

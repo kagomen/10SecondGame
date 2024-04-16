@@ -1,7 +1,65 @@
+@charset 'utf-8';
+
+* {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+body {
+  background: #ddd;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
 .display-none {
   display: none;
 }
 
 .display {
   display: block;
+}
+
+.visibility-hidden {
+  visibility: hidden;
+}
+
+.visibility {
+  visibility: visible;
+}
+
+h1 {
+  font-size: 32px;
+  margin-top: 32px;
+}
+
+#result {
+  font-size: 32px;
+  margin: 24px auto;
+}
+
+#timer {
+  font-family: 'DotGothic16', sans-serif;
+  font-size: 48px;
+  color: #FFF;
+  margin: 32px auto;
+  width: 270px;
+  padding: 32px 24px;
+  border-radius: 16px;
+  background: #333;
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+  padding: 16px 24px;
+  margin: 0 auto;
+  border-radius: 16px;
+  background: #333;
+  color: #FFF;
+  font-size: 24px;
+  user-select: none;
+}
+
+button:active {
+  transform: translateY(3px);
 }
