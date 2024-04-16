@@ -4,8 +4,8 @@ let startTime;
 let elapsedMs;
 let elapsedTime;
 let timerId;
-let s;
-let ms;
+let s = 0;
+let ms = 0;
 let message = "";
 
 const timer = document.getElementById("timer");
@@ -13,6 +13,7 @@ const start = document.getElementById("start");
 const stop = document.getElementById("stop");
 const reset = document.getElementById("reset");
 const result = document.getElementById("result");
+const tweet = document.getElementById("tweet");
 
 function hideButton(btn) {
   btn.classList.remove("display");
@@ -49,6 +50,19 @@ function countUp() {
   }, 16);
 }
 
+function shareAtTweet(s, ms) {
+  let url = "https://kagomen.github.io/10sec-game/";
+  let formattedTimeForTweet = `${s}.${String(ms).padStart(3, "0").slice(0, 2)}`;
+  let text = `I played the 10-second challenge and scored ${formattedTimeForTweet} seconds ⏱️ #10SecondGame\n`;
+
+  url = encodeURIComponent(url);
+  text = encodeURIComponent(text);
+
+  const tweetUrl = `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
+
+  window.open(tweetUrl, '_blank');
+}
+
 start.addEventListener("click", () => {
   startTime = Date.now();  // タイムスタンプを取得
 
@@ -79,6 +93,7 @@ stop.addEventListener("click", () => {
   result.textContent = message;
   hideButton(stop);
   showButton(reset);
+  showButton(tweet);
   showText(result);
   timer.classList.remove("fade-out");
 });
@@ -89,5 +104,10 @@ reset.addEventListener("click", () => {
   timer.textContent = "00:00";
   hideText(result);
   hideButton(reset);
+  hideButton(tweet);
   showButton(start);
+});
+
+tweet.addEventListener("click", () => {
+  shareAtTweet(s, ms);
 });
