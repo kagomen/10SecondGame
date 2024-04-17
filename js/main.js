@@ -1,7 +1,7 @@
 'use strict';
 
 import { tweet } from "./tweet.js";
-import { showBtn, hideBtn, showRating, hideRating } from "./utils.js";
+import { hide, show } from "./utils.js";
 import { rateScore } from "./rateScore.js";
 
 let startTime, elapsedMs, elapsedTime, formattedTime, timerId;
@@ -30,9 +30,8 @@ startBtn.addEventListener("click", () => {
   startTime = Date.now();  // タイムスタンプを取得
 
   countUp();
-  hideBtn(startBtn);
-  showBtn(stopBtn);
-
+  startBtn.hidden = true;
+  stopBtn.hidden = false;
   timer.classList.add("fade-out");
 });
 
@@ -42,10 +41,10 @@ stopBtn.addEventListener("click", () => {
 
   timer.classList.remove("fade-out");
 
-  hideBtn(stopBtn);
-  showBtn(resetBtn);
-  showBtn(tweetBtn);
-  showRating(rating);
+  stopBtn.hidden = true;
+  resetBtn.hidden = false;
+  tweetBtn.hidden = false;
+  show(rating);
 });
 
 resetBtn.addEventListener("click", () => {
@@ -53,10 +52,10 @@ resetBtn.addEventListener("click", () => {
   elapsedTime = 0;
   timer.textContent = "00:00";
 
-  hideBtn(resetBtn);
-  hideBtn(tweetBtn);
-  showBtn(startBtn);
-  hideRating(rating);
+  startBtn.hidden = false;
+  resetBtn.hidden = true;
+  tweetBtn.hidden = true;
+  hide(rating);
 });
 
 tweetBtn.addEventListener("click", () => {

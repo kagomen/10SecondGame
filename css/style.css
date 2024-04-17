@@ -5,19 +5,11 @@
   padding: 0;
 }
 
-.display-none {
-  display: none;
-}
-
-.display {
-  display: block;
-}
-
-.visibility-hidden {
+.hidden {
   visibility: hidden;
 }
 
-.visibility {
+.visible {
   visibility: visible;
 }
 
