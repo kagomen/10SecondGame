@@ -3,6 +3,7 @@
 import { tweet } from "./tweet.js";
 import { hide, show } from "./utils.js";
 import { rateScore } from "./rateScore.js";
+import { setBtnInit, setBtnStarted, setBtnStopped } from "./setBtnState.js";
 
 let startTime, elapsedMs, elapsedTime, formattedTime, timerId;
 
@@ -30,8 +31,7 @@ startBtn.addEventListener("click", () => {
   startTime = Date.now();  // タイムスタンプを取得
 
   countUp();
-  startBtn.hidden = true;
-  stopBtn.hidden = false;
+  setBtnStarted(startBtn, stopBtn, resetBtn, tweetBtn);
   timer.classList.add("fade-out");
 });
 
@@ -41,9 +41,7 @@ stopBtn.addEventListener("click", () => {
 
   timer.classList.remove("fade-out");
 
-  stopBtn.hidden = true;
-  resetBtn.hidden = false;
-  tweetBtn.hidden = false;
+  setBtnStopped(startBtn, stopBtn, resetBtn, tweetBtn);
   show(rating);
 });
 
@@ -52,9 +50,7 @@ resetBtn.addEventListener("click", () => {
   elapsedTime = 0;
   timer.textContent = "00:00";
 
-  startBtn.hidden = false;
-  resetBtn.hidden = true;
-  tweetBtn.hidden = true;
+  setBtnInit(startBtn, stopBtn, resetBtn, tweetBtn);
   hide(rating);
 });
 
