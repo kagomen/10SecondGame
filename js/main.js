@@ -1,16 +1,10 @@
 'use strict';
 
 import { tweet } from "./tweet.js";
-import { showBtn, hideBtn } from "./btn.js";
-import { showRating, hideRating } from "./rating.js";
+import { showBtn, hideBtn, showRating, hideRating } from "./utils.js";
+import { rateScore } from "./rateScore.js";
 
-let startTime;
-let elapsedMs;
-let elapsedTime;
-let timerId;
-let s = 0;
-let ms = 0;
-let msg = "";
+let startTime, elapsedMs, elapsedTime, formattedTime, timerId;
 
 const timer = document.getElementById("timer");
 const startBtn = document.getElementById("startBtn");
@@ -22,23 +16,20 @@ const tweetBtn = document.getElementById("tweetBtn");
 function countUp() {
   elapsedMs = Date.now() - startTime;  // 経過時間を取得
   elapsedTime = new Date(elapsedMs); // Dateオブジェクトに変換
-  s = elapsedTime.getSeconds();
-  ms = elapsedTime.getMilliseconds();
+  const s = elapsedTime.getSeconds();
+  const ms = elapsedTime.getMilliseconds();
 
   // 表示内容を整形
-  const formattedTime = `${String(s).padStart(2, "0")}:${String(ms).padStart(3, "0").slice(0, 2)}`;
+  formattedTime = `${String(s).padStart(2, "0")}.${String(ms).padStart(3, "0").slice(0, 2)}`;
   timer.textContent = formattedTime;
 
-  timerId = setTimeout(() => {
-    countUp();
-  }, 16);
+  timerId = setTimeout(countUp, 16);
 }
 
 startBtn.addEventListener("click", () => {
   startTime = Date.now();  // タイムスタンプを取得
 
   countUp();
-
   hideBtn(startBtn);
   showBtn(stopBtn);
 
@@ -47,21 +38,8 @@ startBtn.addEventListener("click", () => {
 
 stopBtn.addEventListener("click", () => {
   clearTimeout(timerId);
+  rating.textContent = rateScore(elapsedMs);
 
-  if (9050 <= elapsedMs && elapsedMs < 10050) {
-    msg = "Incredible 👀";
-  } else if (9100 <= elapsedMs && elapsedMs < 10100) {
-    msg = "Excellent 🎉";
-  } else if (9250 <= elapsedMs && elapsedMs < 10250) {
-    msg = "Great 🌟";
-  } else if (9500 <= elapsedMs && elapsedMs < 10500) {
-    msg = "Good 👍";
-  } else if (elapsedMs < 9500) {
-    msg = "Too fast 🐇"
-  } else {
-    msg = "Too slow 🐢";
-  }
-  rating.textContent = msg;
   timer.classList.remove("fade-out");
 
   hideBtn(stopBtn);
@@ -82,5 +60,5 @@ resetBtn.addEventListener("click", () => {
 });
 
 tweetBtn.addEventListener("click", () => {
-  tweet(s, ms);
+  tweet(formattedTime);
 });
