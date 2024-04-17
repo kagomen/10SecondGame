@@ -1,6 +1,6 @@
 'use strict';
 
-import { SITE_URL } from "../lib/constants";
+import { SITE_URL } from "../lib/constants.js";
 
 let startTime;
 let elapsedMs;
@@ -56,7 +56,7 @@ function shareAtTweet(s, ms) {
   let formattedTimeForTweet = `${s}.${String(ms).padStart(3, "0").slice(0, 2)}`;
   let text = `❤️⏱️ Played the 10-second game and scored ${formattedTimeForTweet} seconds 🐇♣️ #10SecondGame\n`;
 
-  url = encodeURIComponent(SITE_URL);
+  let url = encodeURIComponent(SITE_URL);
   text = encodeURIComponent(text);
 
   const tweetUrl = `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
