@@ -48,7 +48,7 @@ stopBtn.addEventListener("click", () => {
 resetBtn.addEventListener("click", () => {
   startTime = 0;
   elapsedTime = 0;
-  timer.textContent = "00:00";
+  timer.textContent = "00.00";
 
   setBtnInit(startBtn, stopBtn, resetBtn, tweetBtn);
   hide(rating);

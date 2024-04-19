@@ -10,27 +10,34 @@
 </head>
 
 <body>
-  <header>10-second game</header>
+  <header>
+    10-second game
+  </header>
 
   <main>
-    <p>Let's aim for exactly</p>
-    <p>10 seconds!</p>
-
-    <p id="timer">00:00</p>
-
-    <button id="startBtn">START</button>
-    <button id="stopBtn" hidden>STOP</button>
-    <button id="resetBtn" hidden>play again</button>
-    <!-- <p id="rating" class="hidden">result here 🐇</p> -->
-    <div>
-      <p>- score -</p>
-      <p>Incredible</p>
-      <p>Excellent</p>
-      <p>Great</p>
-      <p>Good</p>
-      <p>Bad...</p>
+    <div class="desc">
+      <p>Let's aim for exactly</p>
+      <p>10 seconds!</p>
     </div>
-    <button id="tweetBtn" hidden>share in X</button>
+    <div class="timer-wrapper">
+      <p id="timer">00.00</p>
+    </div>
+
+    <div id="startBtn" class="btn">START</div>
+    <div id="stopBtn" class="btn" hidden>STOP</div>
+    <div id="resetBtn" class="btn" hidden>play again</div>
+    <p id="rating" class="btn hidden">result here 🐇</p>
+    <div id="score-wrapper">
+      <p class="score-title">score</p>
+      <div class="score">
+        <p>Incredible</p>
+        <p>Excellent</p>
+        <p>Great</p>
+        <p>Good</p>
+        <p>Bad...</p>
+      </div>
+    </div>
+    <div id="tweetBtn" class="btn" hidden>share in X</div>
   </main>
 
   <footer>

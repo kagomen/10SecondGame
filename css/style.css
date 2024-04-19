@@ -8,8 +8,6 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "kongtext", sans-serif;
-  font-size: 16px;
 }
 
 .hidden {
@@ -32,4 +30,87 @@
 
 .fade-out {
   animation: 3s 2s forwards fade-out;
+}
+
+/* ========= */
+
+body {
+  background: black;
+  font-family: "kongtext", sans-serif;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+header {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  color: white;
+  border-bottom: 2px solid yellow;
+  padding-left: 24px;
+}
+
+.desc {
+  color: yellow;
+  text-align: center;
+  font-size: 14px;
+  line-height: 22px;
+  margin-top: 32px;
+}
+
+.timer-wrapper {
+  background: green;
+  font-size: 40px;
+  width: 240px;
+  margin: 24px auto;
+  padding: 28px 28px;
+  border: double 8px black;
+  text-align: center;
+}
+
+.btn {
+  background: yellow;
+  color: black;
+  cursor: pointer;
+  width: 200px;
+  margin: 0 auto;
+  padding: 12px 16px;
+  text-align: center;
+  font-size: 18px;
+}
+
+#score-wrapper {
+  background: green;
+  width: 240px;
+  margin: 24px auto;
+  padding: 20px 24px;
+  border: double 8px black;
+}
+
+.score-title {
+  text-align: center;
+  font-size: 18px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid black;
+  margin-bottom: 16px;
+}
+
+.score {
+  /* font-size: 14px; */
+  line-height: 28px;
+  ;
+}
+
+#tweetBtn {
+  margin-bottom: 24px;
+}
+
+footer {
+  display: flex;
+  height: 64px;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 12px;
+  border-top: 2px solid yellow;
 }
