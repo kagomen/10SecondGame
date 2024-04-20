@@ -12,7 +12,7 @@ const stopBtn = document.getElementById("stopBtn");
 const resetBtn = document.getElementById("resetBtn");
 const tweetBtn = document.getElementById("tweetBtn");
 
-const audio = new Audio('../lib/beep4.ogg');
+const audio = new Audio('../lib/beep4.mp3');
 
 function countUp() {
   elapsedMs = Date.now() - startTime;  // 経過時間を取得
