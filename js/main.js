@@ -13,7 +13,7 @@ const resetBtn = document.getElementById("resetBtn");
 const tweetBtn = document.getElementById("tweetBtn");
 
 const sound = document.getElementById('sound');
-sound.volume = 0.1;
+sound.volume = 0.025;
 
 function countUp() {
   elapsedMs = Date.now() - startTime;  // 経過時間を取得
