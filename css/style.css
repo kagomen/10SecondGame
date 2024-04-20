@@ -8,6 +8,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 .hidden {
@@ -49,16 +50,16 @@ body {
   background: black;
   font-family: "kongtext", sans-serif;
   font-size: 16px;
-  box-sizing: border-box;
 }
 
 header {
-  height: 64px;
+  height: 56px;
   display: flex;
   align-items: center;
   color: white;
   border-bottom: 2px solid yellow;
-  padding-left: 24px;
+  padding-left: 16px;
+  font-size: 14px;
 }
 
 .desc {
@@ -72,7 +73,7 @@ header {
 .timer-wrapper {
   background: green;
   font-size: 40px;
-  width: 240px;
+  width: 280px;
   margin: 24px auto;
   padding: 28px 28px;
   border: double 8px black;
@@ -83,45 +84,56 @@ header {
   background: yellow;
   color: black;
   cursor: pointer;
-  width: 200px;
+  width: 220px;
   margin: 0 auto;
   padding: 12px 16px;
   text-align: center;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 #score-wrapper {
   background: green;
-  width: 240px;
+  width: 280px;
   margin: 24px auto;
-  padding: 20px 24px;
+  padding: 16px 24px;
   border: double 8px black;
 }
 
 .score-title {
   text-align: center;
-  font-size: 18px;
   padding-bottom: 12px;
   border-bottom: 2px solid black;
   margin-bottom: 16px;
 }
 
 .score {
-  /* font-size: 14px; */
-  line-height: 28px;
-  ;
+  font-size: 14px;
+  line-height: 24px;
 }
 
 #tweetBtn {
+  font-size: 12px;
   margin-bottom: 24px;
+  width: 160px;
+  padding: 8px 12px;
 }
 
 footer {
   display: flex;
-  height: 64px;
+  height: 40px;
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 12px;
+  font-size: 10px;
   border-top: 2px solid yellow;
+}
+
+footer a {
+  color: green;
+}
+
+@media (min-height: 690px) {
+  main {
+    height: calc(100vh - 100px - 29px);
+  }
 }
