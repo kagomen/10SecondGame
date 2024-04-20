@@ -2,6 +2,8 @@
 
 ⏱️ < Let's aim for exactly 10 seconds !
 
+<img width="1181" alt="game-preview" src="https://github.com/kagomen/10second-game/assets/154225199/20bff474-7be8-40d5-b1f2-3376e19a653d">
+
 ## Link
 
 https://kagomen.github.io/10second-game/
