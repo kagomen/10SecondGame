@@ -1,17 +1,15 @@
 'use strict';
 
 import { tweet } from "./tweet.js";
-import { hide, show } from "./utils.js";
 import { rateScore } from "./rateScore.js";
 import { setBtnInit, setBtnStarted, setBtnStopped } from "./setBtnState.js";
 
-let startTime, elapsedMs, elapsedTime, formattedTime, timerId;
+let startTime, elapsedMs, elapsedTime, formattedTime, timerId, highlightedEl;
 
 const timer = document.getElementById("timer");
 const startBtn = document.getElementById("startBtn");
 const stopBtn = document.getElementById("stopBtn");
 const resetBtn = document.getElementById("resetBtn");
-const rating = document.getElementById("rating");
 const tweetBtn = document.getElementById("tweetBtn");
 
 function countUp() {
@@ -28,7 +26,7 @@ function countUp() {
 }
 
 startBtn.addEventListener("click", () => {
-  startTime = Date.now();  // タイムスタンプを取得
+  startTime = Date.now();
 
   countUp();
   setBtnStarted(startBtn, stopBtn, resetBtn, tweetBtn);
@@ -37,12 +35,11 @@ startBtn.addEventListener("click", () => {
 
 stopBtn.addEventListener("click", () => {
   clearTimeout(timerId);
-  rating.textContent = rateScore(elapsedMs);
+  highlightedEl = rateScore(elapsedMs);
 
   timer.classList.remove("fade-out");
 
   setBtnStopped(startBtn, stopBtn, resetBtn, tweetBtn);
-  show(rating);
 });
 
 resetBtn.addEventListener("click", () => {
@@ -51,7 +48,7 @@ resetBtn.addEventListener("click", () => {
   timer.textContent = "00.00";
 
   setBtnInit(startBtn, stopBtn, resetBtn, tweetBtn);
-  hide(rating);
+  highlightedEl.classList.remove("highlighted", 'result-item');
 });
 
 tweetBtn.addEventListener("click", () => {

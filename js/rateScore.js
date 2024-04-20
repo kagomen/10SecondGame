@@ -1,22 +1,28 @@
 'use strict';
 
+let incredible = document.getElementById('incredible');
+let excellent = document.getElementById('excellent');
+let great = document.getElementById('great');
+let good = document.getElementById('good');
+let bad = document.getElementById('bad');
+
 export function rateScore(elapsedMs) {
 
-  let msg;
-
+  // returnで該当結果のDOM要素を返す => リセットボタン押下時にクラスを排除する
   if (9050 <= elapsedMs && elapsedMs < 10050) {
-    msg = "Incredible";
+    incredible.classList.add('highlighted', 'result-item');
+    return incredible;
   } else if (9100 <= elapsedMs && elapsedMs < 10100) {
-    msg = "Excellent";
+    excellent.classList.add('highlighted', 'result-item');
+    return excellent;
   } else if (9250 <= elapsedMs && elapsedMs < 10250) {
-    msg = "Great";
+    great.classList.add('highlighted', 'result-item');
+    return great;
   } else if (9500 <= elapsedMs && elapsedMs < 10500) {
-    msg = "Good";
-  } else if (elapsedMs < 9500) {
-    msg = "Too fast"
+    good.classList.add('highlighted', 'result-item');
+    return good;
   } else {
-    msg = "Too slow";
+    bad.classList.add('highlighted', 'result-item');
+    return bad;
   }
-
-  return msg;
 }

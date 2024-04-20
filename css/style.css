@@ -18,6 +18,17 @@
   visibility: visible;
 }
 
+.highlighted {
+  color: yellow;
+}
+
+.result-item {
+  background-image: url('../lib/yellow-heart.png');
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: 20px 18px;
+}
+
 @keyframes fade-out {
   0% {
     opacity: 1;
