@@ -12,6 +12,8 @@ const stopBtn = document.getElementById("stopBtn");
 const resetBtn = document.getElementById("resetBtn");
 const tweetBtn = document.getElementById("tweetBtn");
 
+const audio = new Audio('../lib/beep4.ogg');
+
 function countUp() {
   elapsedMs = Date.now() - startTime;  // 経過時間を取得
   elapsedTime = new Date(elapsedMs); // Dateオブジェクトに変換
@@ -26,6 +28,9 @@ function countUp() {
 }
 
 startBtn.addEventListener("click", () => {
+
+  audio.play();
+
   startTime = Date.now();
 
   countUp();
@@ -34,6 +39,9 @@ startBtn.addEventListener("click", () => {
 });
 
 stopBtn.addEventListener("click", () => {
+
+  audio.play();
+
   clearTimeout(timerId);
   highlightedEl = rateScore(elapsedMs);
 
@@ -43,6 +51,9 @@ stopBtn.addEventListener("click", () => {
 });
 
 resetBtn.addEventListener("click", () => {
+
+  audio.play();
+
   startTime = 0;
   elapsedTime = 0;
   timer.textContent = "00.00";
@@ -52,5 +63,6 @@ resetBtn.addEventListener("click", () => {
 });
 
 tweetBtn.addEventListener("click", () => {
+  audio.play();
   tweet(formattedTime);
 });
