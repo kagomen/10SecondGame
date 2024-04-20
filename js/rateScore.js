@@ -9,16 +9,16 @@ let bad = document.getElementById('bad');
 export function rateScore(elapsedMs) {
 
   // returnで該当結果のDOM要素を返す => リセットボタン押下時にクラスを排除する
-  if (9050 <= elapsedMs && elapsedMs < 10050) {
+  if (9950 <= elapsedMs && elapsedMs <= 10050) {
     incredible.classList.add('highlighted', 'result-item');
     return incredible;
-  } else if (9100 <= elapsedMs && elapsedMs < 10100) {
+  } else if (9900 <= elapsedMs && elapsedMs <= 10100) {
     excellent.classList.add('highlighted', 'result-item');
     return excellent;
-  } else if (9250 <= elapsedMs && elapsedMs < 10250) {
+  } else if (9750 <= elapsedMs && elapsedMs <= 10250) {
     great.classList.add('highlighted', 'result-item');
     return great;
-  } else if (9500 <= elapsedMs && elapsedMs < 10500) {
+  } else if (9500 <= elapsedMs && elapsedMs <= 10500) {
     good.classList.add('highlighted', 'result-item');
     return good;
   } else {

@@ -31,12 +31,10 @@
   85%,
   100% {
     opacity: 1;
-    /* 完全に表示 */
   }
 
   50% {
     opacity: 0;
-    /* 完全に非表示 */
   }
 }
 
@@ -58,10 +56,10 @@
 }
 
 .fade-out {
-  animation: 3s 2s forwards fade-out;
+  animation: 1s 3.5s forwards fade-out;
 }
 
-/* ========= */
+/* ================================== */
 
 body {
   background: black;
