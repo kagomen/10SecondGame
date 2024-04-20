@@ -12,7 +12,9 @@ const stopBtn = document.getElementById("stopBtn");
 const resetBtn = document.getElementById("resetBtn");
 const tweetBtn = document.getElementById("tweetBtn");
 
-const audio = new Audio('../lib/beep4.mp3');
+const sound = new Howl({
+  src: ['beep4.ogg']
+});
 
 function countUp() {
   elapsedMs = Date.now() - startTime;  // 経過時間を取得
@@ -29,7 +31,7 @@ function countUp() {
 
 startBtn.addEventListener("click", () => {
 
-  audio.play();
+  sound.play();
 
   startTime = Date.now();
 
@@ -40,7 +42,7 @@ startBtn.addEventListener("click", () => {
 
 stopBtn.addEventListener("click", () => {
 
-  audio.play();
+  sound.play();
 
   clearTimeout(timerId);
   highlightedEl = rateScore(elapsedMs);
@@ -52,7 +54,7 @@ stopBtn.addEventListener("click", () => {
 
 resetBtn.addEventListener("click", () => {
 
-  audio.play();
+  sound.play();
 
   startTime = 0;
   elapsedTime = 0;
@@ -63,6 +65,6 @@ resetBtn.addEventListener("click", () => {
 });
 
 tweetBtn.addEventListener("click", () => {
-  audio.play();
+  sound.play();
   tweet(formattedTime);
 });
