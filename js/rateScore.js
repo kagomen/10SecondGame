@@ -6,7 +6,7 @@ let great = document.getElementById('great');
 let good = document.getElementById('good');
 let bad = document.getElementById('bad');
 
-export function rateScore(elapsedMs) {
+function rateScore(elapsedMs) {
 
   // returnで該当結果のDOM要素を返す => リセットボタン押下時にクラスを排除する
   if (9950 <= elapsedMs && elapsedMs <= 10050) {

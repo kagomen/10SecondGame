@@ -1,9 +1,5 @@
 'use strict';
 
-import { tweet } from "./tweet.js";
-import { rateScore } from "./rateScore.js";
-import { setBtnInit, setBtnStarted, setBtnStopped } from "./setBtnState.js";
-
 let startTime, elapsedMs, elapsedTime, formattedTime, timerId, highlightedEl;
 
 const timer = document.getElementById("timer");
