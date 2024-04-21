@@ -8,8 +8,10 @@ const stopBtn = document.getElementById("stopBtn");
 const resetBtn = document.getElementById("resetBtn");
 const tweetBtn = document.getElementById("tweetBtn");
 
-const sound = document.getElementById('sound');
-sound.volume = 0.025;
+const sound = new Howl({
+  src: ['../lib/beep4.mp3'],
+  volume: 0.1,
+});
 
 function countUp() {
   elapsedMs = Date.now() - startTime;  // 経過時間を取得
@@ -60,6 +62,5 @@ resetBtn.addEventListener("click", () => {
 });
 
 tweetBtn.addEventListener("click", () => {
-  sound.play();
   tweet(formattedTime);
 });
