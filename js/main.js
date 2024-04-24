@@ -9,7 +9,7 @@ const resetBtn = document.getElementById("resetBtn");
 const tweetBtn = document.getElementById("tweetBtn");
 
 const sound = new Howl({
-  src: ['lib/select8.ogg'],
+  src: ['lib/select8.mp3'],
   volume: 0.2,
 });
 
