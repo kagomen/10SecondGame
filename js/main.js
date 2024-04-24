@@ -9,8 +9,8 @@ const resetBtn = document.getElementById("resetBtn");
 const tweetBtn = document.getElementById("tweetBtn");
 
 const sound = new Howl({
-  src: ['lib/beep4.mp3'],
-  volume: 0.1,
+  src: ['lib/select8.ogg'],
+  volume: 0.2,
 });
 
 function countUp() {
