@@ -1,12 +1,9 @@
 # 10-second game
 
-⏱️ < Let's aim for exactly 10 seconds !
+👾 < Let's aim for exactly 10 seconds !
+[Play now](https://kagomen.github.io/10second-game/) ⏱️
 
 <img alt="game-preview" src="lib/preview-image.png">
-
-## Link
-
-https://kagomen.github.io/10second-game/
 
 ## production period
 
